@@ -4,17 +4,17 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../css/pokemon-card.css" />
-    <title></title>
+<head runat="server">
+	<title></title>
 </head>
 <body>
-    <div class = "pokemon-card">
+	<div class = "pokemon-card">
 		<img id = "imgBox" class = "pokemon-image" src = "" runat = "server" />
-		<a class = "pokemon-name" runat = "server"><%=localPokemon.name  %></a>
-		<a class = "pokemon-type pokemon-type--grass" runat = "server"><%=localPokemon.type1.name%></a>
-		<a class = "pokemon-type pokemon-type--poison" runat = "server"><%=localPokemon.type2.name%></a>
+		<p class = "pokemon-id" runat = "server"><%= localPokemon.pokedexID %></p>
+		<p class = "pokemon-name" runat = "server"><%= localPokemon.name %></p>
+		<% foreach (PokemonType type in localPokemon.types) { %>
+			<p class = "<%= "pokemon-type pokemon-type--" + type.name %>"><%= type.name %></p>
+		<% } %>
 	</div>
 </body>
 </html>

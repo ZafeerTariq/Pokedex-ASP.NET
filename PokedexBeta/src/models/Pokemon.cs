@@ -1,5 +1,5 @@
 ﻿using System;
-//using PokedexBeta.modals;
+using System.Collections.Generic;
 
 namespace PokedexBeta.src.models
 {
@@ -9,8 +9,7 @@ namespace PokedexBeta.src.models
 		public String name;
 		public float height;
 		public float weight;
-		public PokemonType type1;
-		public PokemonType type2;
+		public List<PokemonType> types;
 		public String pokedexEntry;
 		public int hp;
 		public int speed;
@@ -37,8 +36,11 @@ namespace PokedexBeta.src.models
 			this.name = name;
 			this.height = height;
 			this.weight = weight;
-			this.type1 = type1;
-			this.type2 = type2;
+			types = new List<PokemonType>();
+			types.Add(type1);
+			if (type2.name != "null") {
+				types.Add(type2);
+            }
 			this.pokedexEntry = pokedexEntry;
 			this.hp = hp;
 			this.speed = speed;
