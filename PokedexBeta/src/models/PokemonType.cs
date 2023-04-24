@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PokedexBeta.modals
+namespace PokedexBeta.src.models
 {
 	public class PokemonType
 	{

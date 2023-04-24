@@ -1,7 +1,7 @@
 ﻿using System;
 //using PokedexBeta.modals;
 
-namespace PokedexBeta.modals
+namespace PokedexBeta.src.models
 {
 	public class Pokemon
 	{
