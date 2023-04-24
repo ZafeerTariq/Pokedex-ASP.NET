@@ -12,10 +12,21 @@ namespace PokedexBeta
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			Load_Growth_Rate(sender, e);
-			Load_Types(sender, e);
-			Load_Pokemon(sender, e);
-		}
+			if (!IsPostBack) {
+				Load_Growth_Rate(sender, e);
+				Load_Types(sender, e);
+				Load_Pokemon(sender, e);
+
+				string[] typeNames = new string[types.Length];
+				typeNames[0] = "All";
+				for (int i = 0; i < types.Length - 1; i++) {
+					typeNames[i + 1] = types[i].name;
+				}
+
+				typeList.DataSource = typeNames;
+				typeList.DataBind();
+			}
+        }
 		protected void Load_Growth_Rate(object sender, EventArgs e)
 		{
 			SqlConnection conn = new SqlConnection(

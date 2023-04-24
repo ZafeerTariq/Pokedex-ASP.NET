@@ -91,7 +91,7 @@
     <Content Include="src\components\PokemonCard.aspx" />
     <Content Include="src\css\pokemon-card.css" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="src\screens\HomePage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\components\PokemonCard.aspx.cs">
@@ -105,12 +105,12 @@
     <Compile Include="src\models\Pokemon.cs" />
     <Compile Include="src\models\PokemonType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="src\screens\HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="src\screens\HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
