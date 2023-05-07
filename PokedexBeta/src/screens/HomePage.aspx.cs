@@ -52,7 +52,6 @@ namespace PokedexBeta
 					for (int i = 0; i < count; i++) {
 						rdr.Read();
 						growthRate[i] = new GrowthRate(rdr.GetString(1), rdr.GetString(2));
-						//label1.Text = label1.Text + "name = " + rdr.GetString(1) + " formula = " + rdr.GetString(2) + "<br />";
 					}
 				}
 
@@ -83,11 +82,9 @@ namespace PokedexBeta
 
 			if (rdr.HasRows) {
 				types = new PokemonType[count + 1];
-				//label1.Text = "";
 				for (int i = 0; i < count; i++) {
 					rdr.Read();
 					types[i] = new PokemonType(rdr.GetString(1));
-					//label1.Text = label1.Text + types[i].name + "<br />";
 				}
 			}
 
@@ -119,7 +116,6 @@ namespace PokedexBeta
 
 			if (rdr.HasRows) {
 				pokemon = new Pokemon[count];
-				//label1.Text = "";
 				for (int i = 0; i < count; i++) {
 					rdr.Read();
 					pokemon[i] = new Pokemon(rdr.GetInt32(0), rdr.GetString(1), (float)rdr.GetDouble(2),
@@ -130,7 +126,6 @@ namespace PokedexBeta
 						rdr.IsDBNull(17) ? -1 : rdr.GetInt32(17), rdr.IsDBNull(18) ? -1 : rdr.GetInt32(18), rdr.GetString(19), rdr.GetBoolean(21),
 						rdr.GetString(22)
 					);
-					//label1.Text = label1.Text + rdr.GetString(1) + "<br />";
 				}
 			}
 

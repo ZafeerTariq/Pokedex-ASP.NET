@@ -90,6 +90,7 @@
   <ItemGroup>
     <Content Include="src\components\PokemonCard.aspx" />
     <Content Include="src\css\pokemon-card.css" />
+    <Content Include="src\screens\PokemonInfoPage.aspx" />
     <Content Include="Web.config" />
     <Content Include="src\screens\HomePage.aspx" />
   </ItemGroup>
@@ -111,6 +112,13 @@
     </Compile>
     <Compile Include="src\screens\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\screens\PokemonInfoPage.aspx.cs">
+      <DependentUpon>PokemonInfoPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\screens\PokemonInfoPage.aspx.designer.cs">
+      <DependentUpon>PokemonInfoPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
