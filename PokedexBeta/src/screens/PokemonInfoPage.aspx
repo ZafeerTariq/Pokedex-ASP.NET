@@ -9,7 +9,7 @@
 <body>
 	<form id="form1" runat="server">
 		<div>
-			<h1>...info about pokemon</h1>
+			<h1><%= localPokemon.name %></h1>
 		</div>
 	</form>
 </body>

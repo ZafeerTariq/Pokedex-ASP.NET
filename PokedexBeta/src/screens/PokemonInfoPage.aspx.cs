@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Text.Json;
+using PokedexBeta.src.models;
 
 namespace PokedexBeta.src.screens
 {
-    public partial class PokemonInfoPage : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-    }
+	public partial class PokemonInfoPage : System.Web.UI.Page
+	{
+		protected Pokemon localPokemon;
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			int id = Convert.ToInt32(Request.QueryString["id"]);
+			localPokemon = Pokedex.getPokemonByID(id);
+		}
+	}
 }

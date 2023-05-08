@@ -37,9 +37,9 @@
 		<%
 			string type = typeList.SelectedValue;
 			if (type == "All") { 
-				for (int i = 0; i < pokemon.Count(); i++) {
-					if (pokemon[i].pokedexID < 10000) {
-						HttpContext.Current.Items["localPokemon"] = pokemon[i];
+				for (int i = 0; i < Pokedex.allPokemon.Count(); i++) {
+					if (Pokedex.allPokemon[i].pokedexID < 10000) {
+						HttpContext.Current.Items["localPokemon"] = Pokedex.allPokemon[i];
 						Server.Execute("~/src/components/PokemonCard.aspx");
 					}
 					else
@@ -47,10 +47,10 @@
 				}
 			}
 			else {
-				for (int i = 0; i < pokemon.Count(); i++) {
-					if (pokemon[i].pokedexID < 10000) {
+				for (int i = 0; i < Pokedex.allPokemon.Count(); i++) {
+					if (Pokedex.allPokemon[i].pokedexID < 10000) {
 						bool insert = false;
-						foreach (PokemonType localType in pokemon[i].types) {
+						foreach (PokemonType localType in Pokedex.allPokemon[i].types) {
 							if (localType.name == type) { 
 								insert = true;
 								break;
@@ -59,7 +59,7 @@
 								insert = false;
                         }
 						if (insert) { 
-							HttpContext.Current.Items["localPokemon"] = pokemon[i];
+							HttpContext.Current.Items["localPokemon"] =  Pokedex.allPokemon[i];
 							Server.Execute("~/src/components/PokemonCard.aspx");
 						}
 					}
