@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Web;
 using PokedexBeta.src.models;
-using System.Text.Json;
 
 namespace PokedexBeta.src.components
 {

@@ -1,0 +1,92 @@
+﻿.progress-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.card {
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+	background-color: #ffffff;
+	border: 3px solid #0B2463;
+	border-radius: 5px;
+	padding: 10px;
+	width: 900px;
+	height: 420px;
+	position: relative;
+	margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+	align-content: center;
+}
+
+.pokedexInfoContainer {
+	width: 250px;
+	line-height: 0.8;
+	text-align: center;
+	align-content: center;
+	margin-left: 20px;
+}
+
+.templateContainer {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	width: 300px;
+}
+
+.template {
+	color: gray;
+	font-size: 18px;
+}
+
+.values {
+	font-size: 18px;
+	height: 0px;
+	padding: 0px;
+}
+
+.typeContainer {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.type {
+	align-items: center;
+	text-align: center;
+	font-size: 18px;
+	padding: 3px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+h1 {
+	text-align: center;
+	color: black;
+	font-size: 50px;
+}
+
+h2 {
+	text-align: center;
+	color: black;
+	font-size: 20px;
+	margin-left: 40px;
+}
+
+h3 {
+	color: black;
+	font-size: 25px;
+	padding-bottom: 0;
+	text-align: center;
+}
+
+img {
+	float: left;
+	display: block;
+	font-size: 40px;
+	margin-right: 20px;
+}
+
+progress {
+	float: right;
+	margin-right: 530px;
+}

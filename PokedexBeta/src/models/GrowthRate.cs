@@ -4,8 +4,8 @@ namespace PokedexBeta.src.models
 {
     public class GrowthRate
     {
-        private String name;
-        private String formula;
+        public String name;
+        public String formula;
 
         public GrowthRate(String name, String formula)
         {

@@ -26,11 +26,13 @@ namespace PokedexBeta.src.models
 		public String imageURL;
 		public bool hasForms;
 		public String specie_name;
+		public List<PokemonAbility> abilities;
+
 
 		public Pokemon(int pokedexID, String name, float height, float weight, PokemonType type1, PokemonType type2,
 		String pokedexEntry, int hp, int speed, int defence, int attack, int sp_defence, int sp_attack,
 		String species, GrowthRate growthRate, int catchRate, int baseHappiness, int eggCycles,
-		int baseExperience, String imageURL, bool hasForms, String specie_name)
+		int baseExperience, String imageURL, bool hasForms, String specie_name, List<PokemonAbility> abilities)
 		{
 			this.pokedexID = pokedexID;
 			this.name = name;
@@ -38,7 +40,7 @@ namespace PokedexBeta.src.models
 			this.weight = weight;
 			types = new List<PokemonType>();
 			types.Add(type1);
-			if (type2.name != "null") {
+			if (type2 != null) {
 				types.Add(type2);
             }
 			this.pokedexEntry = pokedexEntry;
@@ -58,6 +60,7 @@ namespace PokedexBeta.src.models
 			this.imageURL = imageURL;
 			this.hasForms = hasForms;
 			this.specie_name = specie_name;
+			this.abilities = abilities;
 		}
 	}
 }
