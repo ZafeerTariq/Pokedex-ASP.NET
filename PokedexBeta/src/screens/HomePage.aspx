@@ -8,8 +8,13 @@
 	<link rel="stylesheet" href="~/src/css/pokemon-card.css" />
 	<title></title>
 <style>
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 	h1 {
-		text-align : center
+		justify-self: left;
 	}
 	form {
 		text-align: center;
@@ -20,15 +25,33 @@
 		border-radius: 5px;
 		padding: 3px;
 		margin: 10px;
-        text-align: center;
+		text-align: center;
 		width: 80px;
 		height: 35px;
-    }
+	}
+	.loginButton {
+		text-decoration: none;
+		color: black;
+		border: 3px solid #0B2463;
+		border-radius: 5px;
+		padding: 5px;
+		font-size: 22px;
+	}
+	.headerButtons {
+		display: flex;
+		gap: 10px;
+	}
 </style>
 </head>
 <body>
 	<div>
-		<h1>Complete Pokedex</h1>
+		<div class = "header">
+			<h1>Complete Pokedex</h1>
+			<div class = "headerButtons">
+				<a class = "loginButton" href = "<%= ResolveUrl("../screens/LoginPage.aspx") %>">Login</a>
+				<a class = "loginButton" href = "<%= ResolveUrl("../screens/RegistrationPage.aspx") %>">Register</a>
+			</div>
+		</div>
 		<hr />
 		<form id = "form1" runat = "server">
 			<p style = "display: inline">Type:</p>
@@ -57,7 +80,7 @@
 							}
 							else 
 								insert = false;
-                        }
+						}
 						if (insert) { 
 							HttpContext.Current.Items["localPokemon"] =  Pokedex.allPokemon[i];
 							Server.Execute("~/src/components/PokemonCard.aspx");

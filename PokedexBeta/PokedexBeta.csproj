@@ -120,7 +120,9 @@
     <Content Include="src\css\pokemon-card.css" />
     <Content Include="src\css\PokemonInfoPage.css" />
     <Content Include="src\screens\AbilityInfoPage.aspx" />
+    <Content Include="src\screens\LoginPage.aspx" />
     <Content Include="src\screens\PokemonInfoPage.aspx" />
+    <Content Include="src\screens\RegistrationPage.aspx" />
     <Content Include="src\screens\TypeInfoPage.aspx" />
     <Content Include="Web.config" />
     <Content Include="src\screens\HomePage.aspx" />
@@ -154,12 +156,26 @@
     <Compile Include="src\screens\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="src\screens\LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\screens\LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="src\screens\PokemonInfoPage.aspx.cs">
       <DependentUpon>PokemonInfoPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="src\screens\PokemonInfoPage.aspx.designer.cs">
       <DependentUpon>PokemonInfoPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\screens\RegistrationPage.aspx.cs">
+      <DependentUpon>RegistrationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\screens\RegistrationPage.aspx.designer.cs">
+      <DependentUpon>RegistrationPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\screens\TypeInfoPage.aspx.cs">
       <DependentUpon>TypeInfoPage.aspx</DependentUpon>
