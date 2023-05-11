@@ -11,6 +11,13 @@ namespace PokedexBeta.src.models
 		static public Pokemon[] allPokemon;
 		static public Ability[] allAbilities;
 
+		static public bool loggedIn;
+
+		private Pokedex()
+        {
+			loggedIn = false;
+        }
+
 		protected void Load_Growth_Rate()
 		{
 			SqlConnection conn = new SqlConnection(

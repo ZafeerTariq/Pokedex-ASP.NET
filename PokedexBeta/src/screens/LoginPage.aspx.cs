@@ -11,19 +11,19 @@ namespace PokedexBeta.src.screens
 		}
 		protected void Button1_Click(object sender, EventArgs e)
 		{
+			SqlConnection conn = new SqlConnection(
+				"Data Source = DESKTOP-IM1NTKG\\SQLEXPRESS; Initial Catalog = pokedexTesting; Integrated Security = True"
+			);
 			try {
-				SqlConnection conn = new SqlConnection("Data Source = FARAN\\SQLEXPRESS; Initial Catalog = Pokedex_Final; Integrated Security=True");
-				
 				string uid = TextBox1.Text;
 				string pass = TextBox2.Text;
-				
+
 				conn.Open();
 				
-				string qry = "select * from userdata where Username='" + uid + "' and Pwd='" + pass + "'";
+				string qry = "select * from user_data where username='" + uid + "' and pwd='" + pass + "'";
 				
 				SqlCommand cmd = new SqlCommand(qry, conn);
 				SqlDataReader rdr = cmd.ExecuteReader();
-				
 				if (rdr.Read()) {
 					//Label4.Text = "Login Sucess......!!";
 					Response.Redirect("HomePage.aspx");
@@ -40,6 +40,10 @@ namespace PokedexBeta.src.screens
 			catch (Exception ex) {
 				Response.Write(ex.Message);
 			}
+		}
+		protected void Button2_Click(object sender, EventArgs e)
+		{
+			Response.Redirect("RegistrationPage.aspx");
 		}
 	}
 }

@@ -45,13 +45,18 @@
 </head>
 <body>
 	<div>
-		<div class = "header">
-			<h1>Complete Pokedex</h1>
-			<div class = "headerButtons">
-				<a class = "loginButton" href = "<%= ResolveUrl("../screens/LoginPage.aspx") %>">Login</a>
-				<a class = "loginButton" href = "<%= ResolveUrl("../screens/RegistrationPage.aspx") %>">Register</a>
+		<% if (Pokedex.loggedIn) { %>
+			<h1>Welcome</h1>
+		<% } %>
+		<% else { %>
+			<div class = "header">
+				<h1>Complete Pokedex</h1>
+				<div class = "headerButtons">
+					<a class = "loginButton" href = "<%= ResolveUrl("../screens/LoginPage.aspx") %>">Login</a>
+					<a class = "loginButton" href = "<%= ResolveUrl("../screens/RegistrationPage.aspx") %>">Register</a>
+				</div>
 			</div>
-		</div>
+		<% } %>
 		<hr />
 		<form id = "form1" runat = "server">
 			<p style = "display: inline">Type:</p>
