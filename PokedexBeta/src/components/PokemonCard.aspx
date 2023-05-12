@@ -5,7 +5,6 @@
 
 <html>
 <head runat="server">
-	<link rel="stylesheet" href="~/src/css/pokemon-card.css" />
 	<title></title>
 </head>
 <body>

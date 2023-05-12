@@ -1,4 +1,8 @@
-﻿.header {
+﻿html {
+	font-family: "Fira Sans","Trebuchet MS",Ubuntu,Helvetica,Arial,sans-serif;
+}
+
+.header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

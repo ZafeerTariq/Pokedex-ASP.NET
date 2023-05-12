@@ -33,7 +33,7 @@
 .pokemon-name {
 	align-items: center;
 	text-align: center;
-	font-size: 26px;
+	font-size: 24px;
 	border: 2px solid;
 	border-radius: 5px;
 	width: 130px;
@@ -44,7 +44,7 @@
 .pokemon-type {
 	display: flex;
 	align-items: center;
-	font-size: 26px;
+	font-size: 24px;
 	border: 2px solid;
 	border-radius: 5px;
 	padding: 3px;
@@ -121,22 +121,4 @@
 
 .pokemon-type--fairy {
 	background-color: #D685AD;
-}
-
-
-.pokemon-stats {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: space-between;
-}
-
-.pokemon-stat {
-	background-color: #eee;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	padding: 5px;
-	text-align: center;
-	width: 30%;
 }

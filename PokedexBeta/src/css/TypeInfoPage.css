@@ -1,3 +1,140 @@
-﻿h1 {
+﻿html {
+	font-family: "Fira Sans","Trebuchet MS",Ubuntu,Helvetica,Arial,sans-serif;
+}
+
+.header {
+
+}
+
+.type-normal {
+	background-color: #A8A77A;
+}
+
+.type-fire {
+	background-color: #EE8130;
+}
+
+.type-water {
+	background-color: #6390F0;
+}
+
+.type-electric {
+	background-color: #F7D02C;
+}
+
+.type-grass {
+	background-color: #7AC74C;
+}
+
+.type-ice {
+	background-color: #96D9D6;
+}
+
+.type-fighting {
+	background-color: #C22E28;
+}
+
+.type-poison {
+	background-color: #A33EA1;
+}
+
+.type-ground {
+	background-color: #E2BF65;
+}
+
+.type-flying {
+	background-color: #A98FF3;
+}
+
+.type-psychic {
+	background-color: #F95587;
+}
+
+.type-bug {
+	background-color: #A6B91A;
+}
+
+.type-rock {
+	background-color: #B6A136;
+}
+
+.type-ghost {
+	background-color: #735797;
+}
+
+.type-dragon {
+	background-color: #6F35FC;
+}
+
+.type-dark {
+	background-color: #705746;
+}
+
+.type-steel {
+	background-color: #B7B7CE;
+}
+
+.type-fairy {
+	background-color: #D685AD;
+}
+
+h1 {
 	text-align: center;
+	height: 70px;
+	margin-top: 0px;
+	padding-top: 25px;
+	padding-bottom: 0px;
+}
+
+h2 {
+	text-align: center;
+}
+
+.text-muted {
+	color: #737373;
+}
+
+.stat-summary {
+	text-align: center;
+}
+
+.stat-summary-item {
+	display: inline-block;
+	margin: 0 1rem 1rem;
+	font-size: 20px;
+}
+
+.stat-summary-count {
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.text {
+	font-size: 20px;
+}
+
+.type-button {
+	font-size: 18px;
+	border: 3px solid #0B2463;
+	border-radius: 5px;
+	margin: 5px;
+	text-align: center;
+	padding: 5px;
+	text-decoration: none;
+	color: black;
+}
+
+.relations-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 30px;
+	column-gap: 40px;
+}
+
+.grid-item {
+	padding-top: 15px;
+	padding-left: 30px;
+	padding-bottom: 20px;
+	border: 3px solid #0B2463;
+	border-radius: 5px;
 }

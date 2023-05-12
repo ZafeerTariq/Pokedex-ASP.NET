@@ -1,4 +1,8 @@
-﻿.progress-container {
+﻿html {
+	font-family: "Fira Sans","Trebuchet MS",Ubuntu,Helvetica,Arial,sans-serif;
+}
+
+.progress-container {
 	display: flex;
 	justify-content: space-between;
 }
