@@ -23,5 +23,9 @@ namespace PokedexBeta
 				typeList.DataBind();
 			}
         }
+		protected void Logout_Click(object sender, EventArgs e)
+        {
+			Pokedex.loggedIn = false;
+		}
 	}
 }

@@ -1,0 +1,43 @@
+﻿.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+h1 {
+	justify-self: left;
+}
+
+form {
+	text-align: center;
+}
+
+.typesList {
+	border: 3px solid #0B2463;
+	border-radius: 5px;
+	padding: 3px;
+	margin: 10px;
+	text-align: center;
+	width: 80px;
+	height: 35px;
+}
+
+.loginButton {
+	text-decoration: none;
+	color: black;
+	border: 3px solid #0B2463;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 22px;
+}
+
+.headerButtons {
+	display: flex;
+	gap: 10px;
+}
+
+.welcomeText {
+	font-size: 20px;
+	margin-left: auto;
+	margin-right: 10px;
+}

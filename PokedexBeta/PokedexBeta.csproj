@@ -117,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="src\components\PokemonCard.aspx" />
+    <Content Include="src\css\HomePage.css" />
     <Content Include="src\css\pokemon-card.css" />
     <Content Include="src\css\PokemonInfoPage.css" />
     <Content Include="src\screens\AbilityInfoPage.aspx" />
@@ -138,6 +139,7 @@
     <Compile Include="src\models\Ability.cs" />
     <Compile Include="src\models\GrowthRate.cs" />
     <Compile Include="src\models\Pokedex.cs" />
+    <Compile Include="src\models\PokedexUser.cs" />
     <Compile Include="src\models\Pokemon.cs" />
     <Compile Include="src\models\PokemonAbility.cs" />
     <Compile Include="src\models\PokemonType.cs" />

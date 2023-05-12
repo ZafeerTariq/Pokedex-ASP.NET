@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using PokedexBeta.src.models;
 
 namespace PokedexBeta.src.screens
 {
@@ -26,11 +27,14 @@ namespace PokedexBeta.src.screens
 				SqlDataReader rdr = cmd.ExecuteReader();
 				if (rdr.Read()) {
 					//Label4.Text = "Login Sucess......!!";
+					Pokedex.loggedIn = true;
+					PokedexUser.name = rdr.GetString(1) + " " + rdr.GetString(2);
+					PokedexUser.username = rdr.GetString(3);
+					PokedexUser.gender = rdr.GetString(6);
 					Response.Redirect("HomePage.aspx");
 				}
 				else {
 					Label4.Text = "UserId & Password Is not correct Try again..!!";
-
 				}
 
 				rdr.Close();

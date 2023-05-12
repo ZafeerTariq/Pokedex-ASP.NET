@@ -13,7 +13,7 @@ namespace PokedexBeta.src.models
 
 		static public bool loggedIn;
 
-		private Pokedex()
+		public Pokedex()
         {
 			loggedIn = false;
         }
