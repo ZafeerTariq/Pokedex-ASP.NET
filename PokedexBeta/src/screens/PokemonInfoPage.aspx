@@ -12,7 +12,7 @@
 </head>
 <body>
 	<form id="form1" runat="server">
-		<h1><%= localPokemon.name %></h1>
+		<h1><%= Helper.firstCharToUpper(localPokemon.name) %></h1>
 		<img src = "<%= localPokemon.imageURL %>" alt="UNABLE TO LOAD PIC" />
 		<br />
 		<div class = "card">
@@ -27,7 +27,7 @@
 						<% foreach (PokemonType type in localPokemon.types) { %>
 							<a style = "text-decoration: none; color: black;"
 							href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + type.name%>">
-								<p class = "type"><%= type.name %></p>
+								<p class = "type"><%= Helper.firstCharToUpper(type.name) %></p>
 							</a>
 						<% } %>
 					</div>
@@ -43,7 +43,7 @@
 					<% foreach (PokemonAbility abil in localPokemon.abilities) { %>
 						<a style = "text-decoration: none; color: black;"
 						href = "<%= ResolveUrl("../screens/AbilityInfoPage.aspx") + "?name=" + abil.ability.name%>">
-							<p class = "type"> <%= abil.ability.name %>
+							<p class = "type"> <%= Helper.firstCharToUpper(abil.ability.name) %>
 							<% if (abil.isHidden) { %>
 								(Hidden)
 							<% } %>

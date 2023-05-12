@@ -10,6 +10,7 @@ namespace PokedexBeta.src.screens
 		{
 			string name = Request.QueryString["name"];
 			localType = Pokedex.getTypeByName(name);
+			
 		}
 	}
 }
