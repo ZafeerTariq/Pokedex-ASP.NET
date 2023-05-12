@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-		<link rel="stylesheet" type="text/css" href="~/src/css/pokemonInfopage.css"/>
+		<link rel="stylesheet" type="text/css" href="~/src/css/PokemonInfoPage.css"/>
 	<title></title>
 	<style>
 	</style>
@@ -23,7 +23,7 @@
 					<p class = "values" runat = "server"> <%= localPokemon.pokedexID %></p>
 					
 					<p class = "template"> Types </p>
-					<div class = "typeContainer">
+					<div class = "<%= "typeContainer" + localPokemon.types.Count().ToString() %>">
 						<% foreach (PokemonType type in localPokemon.types) { %>
 							<a style = "text-decoration: none; color: black;"
 							href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + type.name%>">
