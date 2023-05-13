@@ -27,12 +27,17 @@ namespace PokedexBeta.src.models
 		public bool hasForms;
 		public String specie_name;
 		public List<PokemonAbility> abilities;
+		public List<PokemonMove> moves;
+		public List<Pokemon> evolvesFrom;
+		public List<Pokemon> evolvesTo;
+		public List<string> evolvesFromTriggers;
+		public List<string> evolvesToTriggers;
 
 
 		public Pokemon(int pokedexID, String name, float height, float weight, PokemonType type1, PokemonType type2,
 		String pokedexEntry, int hp, int speed, int defence, int attack, int sp_defence, int sp_attack,
 		String species, GrowthRate growthRate, int catchRate, int baseHappiness, int eggCycles,
-		int baseExperience, String imageURL, bool hasForms, String specie_name, List<PokemonAbility> abilities)
+		int baseExperience, String imageURL, bool hasForms, String specie_name, List<PokemonAbility> abilities, List<PokemonMove> moves)
 		{
 			this.pokedexID = pokedexID;
 			this.name = name;
@@ -61,6 +66,18 @@ namespace PokedexBeta.src.models
 			this.hasForms = hasForms;
 			this.specie_name = specie_name;
 			this.abilities = abilities;
+			this.moves = moves;
 		}
+
+		public void SetEvolvesFrom(List<Pokemon> pokemon, List<string> triggers)
+        {
+			evolvesFrom = pokemon;
+			evolvesFromTriggers = triggers;
+        }
+		public void SetEvolvesTo(List<Pokemon> pokemon, List<string> triggers)
+        {
+			evolvesTo = pokemon;
+			evolvesToTriggers = triggers;
+        }
 	}
 }

@@ -112,6 +112,67 @@
 				</div>
 			</div>
 
+			<br />
+
+		<div class = "evolution-chain">
+				<h2>Evolution Chain</h2>
+<%--				<% for (int i = 0; i < localPokemon.evolvesFrom.Count(); i++) { %>
+					<p><%= localPokemon.evolvesFromTriggers[i].Replace('_', ' ') %></p>
+					<p><%= Helper.firstCharToUpper(localPokemon.evolvesFrom[i].name) %></p>
+				<% } %>
+				<% for (int i = 0; i < localPokemon.evolvesTo.Count(); i++) { %>
+					<p><%= localPokemon.evolvesToTriggers[i].Replace('_', ' ') %></p>
+					<p><%= Helper.firstCharToUpper(localPokemon.evolvesTo[i].name) %></p>
+				<% } %>--%>
+		</div>
+
+			<br />
+
+			<h2>Moves Learnt</h2>
+				<div class = "moves-table">
+					<div>
+						<h3>Level Up</h3>
+						<div class = "level-up-move-info">
+							<h4>Level</h4>
+							<h4>Name</h4>
+							<h4>Type</h4>
+							<% foreach (PokemonMove move in localPokemon.moves) { %>
+								<% if (move.learnMethod == "level-up") { %>
+									<p><%= move.learnAtLevel %></p>
+									<p><%= move.move.name %></p>
+									<p><%= move.move.type.name %></p>
+								<% } %>
+							<% } %>
+						</div>
+					</div>
+					<div>
+						<h3>Machine</h3>
+						<div class = "maching-move-info">
+							<h4>Name</h4>
+							<h4>Type</h4>
+							<% foreach (PokemonMove move in localPokemon.moves) { %>
+								<% if (move.learnMethod == "machine") { %>
+									<p><%= move.move.name %></p>
+									<p><%= move.move.type.name %></p>
+								<% } %>
+							<% } %>
+						</div>
+					</div>
+					<div>
+						<div class = "maching-move-info">
+							<h4>Name</h4>
+							<h4>Type</h4>
+							<h3>Egg Moves</h3>
+							<% foreach (PokemonMove move in localPokemon.moves) { %>
+								<% if (move.learnMethod == "egg") { %>
+									<p><%= move.move.name %></p>
+									<p><%= move.move.type.name %></p>
+								<% } %>
+							<% } %>
+						</div>
+					</div>
+				</div>
+
 		</div>
 	</form>
 </body>

@@ -11,6 +11,10 @@ h2 {
 	text-align: center;
 }
 
+h3 {
+	text-align: center;
+}
+
 .container {
 	padding-top: 20px;
 	display: grid;
@@ -109,6 +113,23 @@ img {
 progress {
 	width: 300px;
 	padding-bottom: 25px;
+}
+
+.moves-table {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.level-up-move-info {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding-left: 50px;
+	padding-right: 10px;
+}
+
+.maching-move-info {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 }
 
 .type-normal {
