@@ -140,33 +140,41 @@
 								<% if (move.learnMethod == "level-up") { %>
 									<p><%= move.learnAtLevel %></p>
 									<p><%= move.move.name %></p>
-									<p><%= move.move.type.name %></p>
+									<a class = "<%= "type-button-moves type-" + move.move.type.name %>" href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + move.move.type.name%>">
+										<%= move.move.type.name %>
+									</a>
 								<% } %>
 							<% } %>
 						</div>
 					</div>
+					<hr />
 					<div>
 						<h3>Machine</h3>
-						<div class = "maching-move-info">
+						<div class = "machine-move-info">
 							<h4>Name</h4>
 							<h4>Type</h4>
 							<% foreach (PokemonMove move in localPokemon.moves) { %>
 								<% if (move.learnMethod == "machine") { %>
 									<p><%= move.move.name %></p>
-									<p><%= move.move.type.name %></p>
+									<a class = "<%= "type-button-moves type-" + move.move.type.name %>" href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + move.move.type.name%>">
+										<%= move.move.type.name %>
+									</a>
 								<% } %>
 							<% } %>
 						</div>
 					</div>
+					<hr />
 					<div>
-						<div class = "maching-move-info">
+						<h3>Egg Moves</h3>
+						<div class = "machine-move-info">
 							<h4>Name</h4>
 							<h4>Type</h4>
-							<h3>Egg Moves</h3>
 							<% foreach (PokemonMove move in localPokemon.moves) { %>
 								<% if (move.learnMethod == "egg") { %>
 									<p><%= move.move.name %></p>
-									<p><%= move.move.type.name %></p>
+									<a class = "<%= "type-button-moves type-" + move.move.type.name %>" href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + move.move.type.name%>">
+										<%= move.move.type.name %>
+									</a>
 								<% } %>
 							<% } %>
 						</div>

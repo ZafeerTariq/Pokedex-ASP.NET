@@ -75,6 +75,7 @@ img {
 	border-radius: 5px;
 	text-decoration: none;
 	color: black;
+	text-align: center;
 }
 
 .ability-container {
@@ -117,19 +118,29 @@ progress {
 
 .moves-table {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: 30% 5% 30% 5% 30%;
 }
 
 .level-up-move-info {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	padding-left: 50px;
-	padding-right: 10px;
+	padding-left: 18%;
 }
 
-.maching-move-info {
+.machine-move-info {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+	padding-left: 25%;
+}
+
+.type-button-moves {
+	padding: 5px;
+	border: 3px solid #0B2463;
+	border-radius: 5px;
+	text-decoration: none;
+	color: black;
+	text-align: center;
+	margin: 5px;
 }
 
 .type-normal {
