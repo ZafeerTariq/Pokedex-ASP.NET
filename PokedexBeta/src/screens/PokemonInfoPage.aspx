@@ -1,102 +1,118 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PokemonInfoPage.aspx.cs" Inherits="PokedexBeta.src.screens.PokemonInfoPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PokemonInfoPage.aspx.cs" Inherits="PokedexBeta.src.screens.info" %>
 <%@ Import Namespace = "PokedexBeta.src.models" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-		<link rel="stylesheet" type="text/css" href="~/src/css/PokemonInfoPage.css"/>
+	<link rel="stylesheet" type="text/css" href="~/src/css/PokemonInfoPage.css"/>
 	<title></title>
-	<style>
-	</style>
 </head>
 <body>
 	<form id="form1" runat="server">
-		<h1><%= Helper.firstCharToUpper(localPokemon.name) %></h1>
-		<img src = "<%= localPokemon.imageURL %>" alt="UNABLE TO LOAD PIC" />
-		<br />
-		<div class = "card">
-			<div class = "pokedexInfoContainer">
-				<h3>Pokedex data</h3>
-				<div class = "templateContainer">
-					<p class = "template"> Pokedex No. </p>
-					<p class = "values" runat = "server"> <%= localPokemon.pokedexID %></p>
-					
-					<p class = "template"> Types </p>
-					<div class = "<%= "typeContainer" + localPokemon.types.Count().ToString() %>">
-						<% foreach (PokemonType type in localPokemon.types) { %>
-							<a style = "text-decoration: none; color: black;"
-							href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + type.name%>">
-								<p class = "type"><%= Helper.firstCharToUpper(type.name) %></p>
-							</a>
-						<% } %>
-					</div>
-					
-					<p class = "template"> Height </p>
-					<p class = "values" runat = "server"> <%= localPokemon.height %> meters </p>
-					
-					<p class = "template"> Weight </p>
-					<p class = "values" runat = "server"> <%= localPokemon.weight %> kg </p> 
-					
-					<p class = "template"> Abilities </p>
-					<div>
-					<% foreach (PokemonAbility abil in localPokemon.abilities) { %>
-						<a style = "text-decoration: none; color: black;"
-						href = "<%= ResolveUrl("../screens/AbilityInfoPage.aspx") + "?name=" + abil.ability.name%>">
-							<p class = "type"> <%= Helper.firstCharToUpper(abil.ability.name) %>
-							<% if (abil.isHidden) { %>
-								(Hidden)
-							<% } %>
-							</p>
-
-						</a>
-					<% } %>	
-					</div>
-				</div>			
-			</div>
+		<div>
+			<h1><%= Helper.firstCharToUpper(localPokemon.name) %></h1>
 			<hr />
-			<div class = "pokedexInfoContainer">
-				<h3> Training </h3>
-				<div class = "templateContainer">
-					<p class = "template">Catch Rate</p>
-					<p class = "values"> <%= localPokemon.catchRate %> </p>
+			<div class = "container">
+				<img src = "<%= localPokemon.imageURL %>" alt="UNABLE TO LOAD PIC" />
+				<div class = "info-container">
 
-					<p class = "template">Growth Rate</p>
-					<p class = "values"> <%= localPokemon.growthRate.name %> </p>
+					<div class = "pokedex-data-container">
+						<h2>Pokedex data</h2>
+						<div class = "pokedex-data-template">
+							<div class = "template">
+								<p>Pokedex No</p>
+								<p class = "type-text">Type</p>
+								<p>Height</p>
+								<p>Weight</p>
+								<p>Abilities</p>
+							</div>
+							<div>
+								<p><%= localPokemon.pokedexID %></p>
+								<div class = "types-container">
+									<% foreach (PokemonType type in localPokemon.types) { %>
+										<a class = "<%= "type-button type-" + type.name %>" href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + type.name%>">
+											<%= Helper.firstCharToUpper(type.name) %>
+										</a>
+									<% } %>
+								</div>
+								<p><%= localPokemon.height %></p>
+								<p><%= localPokemon.weight %></p>
+								<div class = "ability-container">
+									<% foreach (PokemonAbility ability in localPokemon.abilities) { %>
+										<% if (ability.isHidden) { %>
+											<a class = "ability-button" href = "<%= ResolveUrl("../screens/AbilityInfoPage.aspx") + "?name=" + ability.ability.name %>">
+												<%= Helper.firstCharToUpper(ability.ability.name) + "(Hidden)"%>
+											</a>
+										<% } else { %>
+											<a class = "ability-button" href = "<%= ResolveUrl("../screens/AbilityInfoPage.aspx") + "?name=" + ability.ability.name %>">
+												<%= Helper.firstCharToUpper(ability.ability.name) %>
+											</a>
+										<% } %>
+									<% } %>
+								</div>
+							</div>
+						</div>
+					</div>
 
-					<p class = "template">Base Happiness</p>
-					<p class = "values"> <%= localPokemon.baseHappiness %> </p>
+					<hr />
 
-					<p class = "template">Base Experience</p>
-					<p class = "values"> <%= localPokemon.baseExperience %> </p>
-
-					<p class = "template">Egg Cycles</p>
-					<p class = "values"> <%= localPokemon.eggCycles %> </p>
+					<div class = "training-data-container">
+						<h2>Training</h2>
+						<div class = "training-data-template">
+							<div class = "template">
+								<p>Catch Rate</p>
+								<p>Growth Rate</p>
+								<p>Base Happiness</p>
+								<p>Base Experience</p>
+								<p>Egg Cycles</p>
+							</div>
+							<div>
+								<p><%= localPokemon.catchRate %></p>
+								<p><%= localPokemon.growthRate.name %></p>
+								<p><%= localPokemon.baseHappiness %></p>
+								<p><%= localPokemon.baseExperience %></p>
+								<p><%= localPokemon.eggCycles %></p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
+
+			<br />
+			
+			<div class = "some-container">
+				<div>
+					<h2>Base Stats</h2>
+					<div class = "stats-container">
+						<div class = "template">
+							<p> Attack = <%= localPokemon.attack %></p>
+							<p> HP : <%= localPokemon.hp %></p>
+							<p> Defence = <%= localPokemon.defence %></p>
+							<p> Speed : <%= localPokemon.speed %></p>
+							<p> Sp. Attack = <%= localPokemon.sp_attack %></p>
+							<p> Sp. Defence = <%= localPokemon.sp_defence %></p>
+						</div>
+						<div class = "progress-continer">
+							<progress value="<%= localPokemon.attack %>" max="190"></progress>
+							<progress value="<%= localPokemon.hp %>" max="255"></progress>
+							<progress value="<%= localPokemon.defence %>" max="250"></progress>
+							<progress value="<%= localPokemon.speed %>" max="200"></progress>
+							<progress value="<%= localPokemon.sp_attack %>" max="194"></progress>
+							<progress value="<%= localPokemon.sp_defence %>" max="250"></progress>
+						</div>
+					</div>
+				</div>
+
+				<hr />
+
+				<div>
+					<h2>Pokedex Entry</h2>
+					<p><%= localPokemon.pokedexEntry %></p>
+				</div>
+			</div>
+
 		</div>
-
-		<br />
-		<br />
-		<hr />
-		
-		<progress value="<%= localPokemon.attack %>" max="190"></progress>
-		<h2> Attack = <%= localPokemon.attack %></h2>
-
-		<progress value="<%= localPokemon.hp %>" max="255"></progress>
-		<h2> HP : <%= localPokemon.hp %></h2>
-			
-		<progress value="<%= localPokemon.defence %>" max="250"></progress>
-		<h2> Defence = <%= localPokemon.defence %></h2>
-
-		<progress value="<%= localPokemon.speed %>" max="200"></progress>
-		<h2> Speed : <%= localPokemon.speed %></h2>
-			
-		<progress value="<%= localPokemon.sp_attack %>" max="194"></progress>
-		<h2> Sp. Attack = <%= localPokemon.sp_attack %></h2>
-
-		<progress value="<%= localPokemon.sp_defence %>" max="250"></progress>
-		<h2> Sp. Defence = <%= localPokemon.sp_defence %></h2>
 	</form>
 </body>
 </html>

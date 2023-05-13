@@ -10,7 +10,7 @@
 
 namespace PokedexBeta.src.screens
 {
-    public partial class PokemonInfoPage
+    public partial class info
     {
 
         /// <summary>
