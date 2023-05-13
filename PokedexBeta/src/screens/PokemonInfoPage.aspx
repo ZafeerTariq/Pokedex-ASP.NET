@@ -139,9 +139,9 @@
 							<% foreach (PokemonMove move in localPokemon.moves) { %>
 								<% if (move.learnMethod == "level-up") { %>
 									<p><%= move.learnAtLevel %></p>
-									<p><%= move.move.name %></p>
+									<p><%= Helper.firstCharToUpper(move.move.name) %></p>
 									<a class = "<%= "type-button-moves type-" + move.move.type.name %>" href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + move.move.type.name%>">
-										<%= move.move.type.name %>
+										<%= Helper.firstCharToUpper(move.move.type.name) %>
 									</a>
 								<% } %>
 							<% } %>
@@ -155,9 +155,9 @@
 							<h4>Type</h4>
 							<% foreach (PokemonMove move in localPokemon.moves) { %>
 								<% if (move.learnMethod == "machine") { %>
-									<p><%= move.move.name %></p>
+									<p><%= Helper.firstCharToUpper(move.move.name) %></p>
 									<a class = "<%= "type-button-moves type-" + move.move.type.name %>" href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + move.move.type.name%>">
-										<%= move.move.type.name %>
+										<%= Helper.firstCharToUpper(move.move.type.name) %>
 									</a>
 								<% } %>
 							<% } %>
@@ -171,9 +171,9 @@
 							<h4>Type</h4>
 							<% foreach (PokemonMove move in localPokemon.moves) { %>
 								<% if (move.learnMethod == "egg") { %>
-									<p><%= move.move.name %></p>
+									<p><%= Helper.firstCharToUpper(move.move.name) %></p>
 									<a class = "<%= "type-button-moves type-" + move.move.type.name %>" href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + move.move.type.name%>">
-										<%= move.move.type.name %>
+										<%= Helper.firstCharToUpper(move.move.type.name) %>
 									</a>
 								<% } %>
 							<% } %>
