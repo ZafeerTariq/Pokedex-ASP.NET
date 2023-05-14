@@ -168,7 +168,7 @@ namespace PokedexBeta.src.models
 					//List<PokemonAbility> abilities = getAbilitiesForPokemon(rdr.GetInt32(0), conn);
 					//List<PokemonMove> moves = getMovesForPokemon(rdr.GetInt32(0), conn);
 
-					allPokemon[i] = new Pokemon(rdr.GetInt32(0), rdr.GetString(1), (float)rdr.GetDouble(2),
+					allPokemon[i] = new Pokemon(rdr.GetInt32(0), rdr.GetInt32(20), rdr.GetString(1), (float)rdr.GetDouble(2),
 						(float)rdr.GetDouble(3), allTypes[rdr.GetInt32(4) - 1], rdr.IsDBNull(5) ? null : allTypes[rdr.GetInt32(5) - 1]/*allTypes[allTypes.Length - 1] : allTypes[rdr.GetInt32(5) - 1]*/,
 						rdr.GetString(6), rdr.GetInt32(7), rdr.GetInt32(8), rdr.GetInt32(9),
 						rdr.GetInt32(10), rdr.GetInt32(11), rdr.GetInt32(12), rdr.IsDBNull(13) ? null : rdr.GetString(13),
@@ -266,8 +266,16 @@ namespace PokedexBeta.src.models
 			conn.Close();
 		}
 
-		private List<PokemonAbility> getAbilitiesForPokemon(int id, SqlConnection conn)
+		static public List<PokemonAbility> getAbilitiesForPokemon(int id)
         {
+			SqlConnection conn = new SqlConnection(
+				"Data Source = DESKTOP-IM1NTKG\\SQLEXPRESS;" +
+				"Initial Catalog = pokedexTesting;" +
+				"Integrated Security = True;" +
+				"MultipleActiveResultSets = true"
+			);
+			conn.Open();
+
 			SqlCommand abilityCmd = new SqlCommand("select * from pokemon_abilities where pokemon_id = @id", conn);
 			SqlParameter param = new SqlParameter();
 			param.ParameterName = "@id";
@@ -302,10 +310,19 @@ namespace PokedexBeta.src.models
 
 			abilityRdr.Close();
 			abilityCmd.Dispose();
+			conn.Close();
 			return abilities;
 		}
-		static public List<PokemonMove> getMovesForPokemon(int id, SqlConnection conn)
+		static public List<PokemonMove> getMovesForPokemon(int id)
         {
+			SqlConnection conn = new SqlConnection(
+				"Data Source = DESKTOP-IM1NTKG\\SQLEXPRESS;" +
+				"Initial Catalog = pokedexTesting;" +
+				"Integrated Security = True;" +
+				"MultipleActiveResultSets = true"
+			);
+			conn.Open();
+
 			SqlCommand cmd = new SqlCommand("select * from moves_learnt where pokemon_id = @id", conn);
 			SqlParameter param = new SqlParameter();
 			param.ParameterName = "@id";
@@ -342,7 +359,7 @@ namespace PokedexBeta.src.models
 
 			rdr.Close();
 			cmd.Dispose();
-
+			conn.Close();
 			return moves;
         }
 
@@ -350,8 +367,8 @@ namespace PokedexBeta.src.models
 		{
 			Load_Growth_Rate();
 			Load_Types();
-			//Load_Moves();
-			//Load_Abilities();
+			Load_Moves();
+			Load_Abilities();
 			Load_Pokemon();
 			//Add_Evolution_Chain();
 		}

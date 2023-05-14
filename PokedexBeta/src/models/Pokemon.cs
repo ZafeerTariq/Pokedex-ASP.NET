@@ -5,6 +5,7 @@ namespace PokedexBeta.src.models
 {
 	public class Pokemon
 	{
+		public int id;
 		public int pokedexID;
 		public String name;
 		public float height;
@@ -34,11 +35,12 @@ namespace PokedexBeta.src.models
 		public List<string> evolvesToTriggers;
 
 
-		public Pokemon(int pokedexID, String name, float height, float weight, PokemonType type1, PokemonType type2,
+		public Pokemon(int id, int pokedexID, String name, float height, float weight, PokemonType type1, PokemonType type2,
 		String pokedexEntry, int hp, int speed, int defence, int attack, int sp_defence, int sp_attack,
 		String species, GrowthRate growthRate, int catchRate, int baseHappiness, int eggCycles,
 		int baseExperience, String imageURL, bool hasForms, String specie_name, List<PokemonAbility> abilities, List<PokemonMove> moves)
 		{
+			this.id = id;
 			this.pokedexID = pokedexID;
 			this.name = name;
 			this.height = height;

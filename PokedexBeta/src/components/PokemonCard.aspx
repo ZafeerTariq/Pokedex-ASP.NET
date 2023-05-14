@@ -10,7 +10,7 @@
 <body>
 	<div>
 		<a style = "text-decoration: none; color: black;"
-			href = "<%= ResolveUrl("../screens/PokemonInfoPage.aspx") + "?id=" + localPokemon.pokedexID%>"
+			href = "<%= ResolveUrl("../screens/PokemonInfoPage.aspx") + "?id=" + localPokemon.id%>"
 			class = "pokemon-card">
 			<img id = "imgBox" class = "pokemon-image" src = "" runat = "server" />
 			<div class = "pokedex-info">

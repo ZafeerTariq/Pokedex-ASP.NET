@@ -12,6 +12,8 @@ namespace PokedexBeta.src.screens
 		{
 			int id = Convert.ToInt32(Request.QueryString["id"]);
 			localPokemon = Pokedex.getPokemonByID(id);
+			localPokemon.abilities = Pokedex.getAbilitiesForPokemon(localPokemon.id);
+			localPokemon.moves = Pokedex.getMovesForPokemon(localPokemon.id);
 			//MakeEvolutionChain();
 		}
 		protected void MakeEvolutionChain()
