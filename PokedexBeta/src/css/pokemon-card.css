@@ -51,6 +51,25 @@
 	margin-left: 5px;
 }
 
+.pokedex-info {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	width: 35%;
+}
+
+.stats {
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	padding-left: 60px;
+	padding-right: 5px;
+	width: 65%;
+}
+
+.stats-text {
+	font-size: 20px;
+}
+
 .pokemon-type--normal {
 	background-color: #A8A77A;
 }

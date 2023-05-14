@@ -79,5 +79,9 @@ namespace PokedexBeta.src.models
 			evolvesTo = pokemon;
 			evolvesToTriggers = triggers;
         }
+		public int getStatTotal()
+        {
+			return hp + defence + speed + attack + sp_attack + sp_defence;
+        }
 	}
 }

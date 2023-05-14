@@ -21,6 +21,8 @@ namespace PokedexBeta
 
 				typeList.DataSource = typeNames;
 				typeList.DataBind();
+
+				//Header.Attributes.Add("class", "sticky-header");
 			}
         }
 		protected void Logout_Click(object sender, EventArgs e)

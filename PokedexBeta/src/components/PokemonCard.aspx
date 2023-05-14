@@ -13,11 +13,22 @@
 			href = "<%= ResolveUrl("../screens/PokemonInfoPage.aspx") + "?id=" + localPokemon.pokedexID%>"
 			class = "pokemon-card">
 			<img id = "imgBox" class = "pokemon-image" src = "" runat = "server" />
-			<p class = "pokemon-id" runat = "server"><%= localPokemon.pokedexID %></p>
-			<p class = "pokemon-name" runat = "server"><%= Helper.firstCharToUpper(localPokemon.name) %></p>
-			<% foreach (PokemonType type in localPokemon.types) { %>
-				<p class = "<%= "pokemon-type pokemon-type--" + type.name %>"><%= Helper.firstCharToUpper(type.name) %></p>
-			<% } %>
+			<div class = "pokedex-info">
+				<p class = "pokemon-id" runat = "server"><%= localPokemon.pokedexID %></p>
+				<p class = "pokemon-name" runat = "server"><%= Helper.firstCharToUpper(localPokemon.name) %></p>
+				<% foreach (PokemonType type in localPokemon.types) { %>
+					<p class = "<%= "pokemon-type pokemon-type--" + type.name %>"><%= Helper.firstCharToUpper(type.name) %></p>
+				<% } %>
+			</div>
+			<div class = "stats">
+				<p class = "stats-text"><%= localPokemon.getStatTotal() %></p>
+				<p class = "stats-text"><%= localPokemon.hp %></p>
+				<p class = "stats-text"><%= localPokemon.attack %></p>
+				<p class = "stats-text"><%= localPokemon.defence %></p>
+				<p class = "stats-text"><%= localPokemon.speed %></p>
+				<p class = "stats-text"><%= localPokemon.sp_attack %></p>
+				<p class = "stats-text"><%= localPokemon.sp_defence %></p>
+			</div>
 		</a>
 	</div>
 </body>

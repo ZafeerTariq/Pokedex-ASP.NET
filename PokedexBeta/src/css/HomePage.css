@@ -2,10 +2,32 @@
 	font-family: "Fira Sans","Trebuchet MS",Ubuntu,Helvetica,Arial,sans-serif;
 }
 
-.header {
+.heading {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+
+header {
+	display: grid;
+	grid-template-columns: 16% 10% 15% 10% 9% 7% 7% 8% 9% 9%;
+	margin-left: 70px;
+	margin-right: 70px;
+	margin-bottom: 5px;
+	background-color: #808080;
+	border-radius: 5px;
+	position: relative;
+	top: initial;
+	width: 90%;
+	z-index: 99999;
+}
+
+.sticky-header {
+	position: fixed;
+	width: 90%;
+	top: 0;
+	background-color: #808080;
+	/* Additional styles for the sticky header */
 }
 
 h1 {
@@ -35,7 +57,7 @@ form {
 	font-size: 22px;
 }
 
-.headerButtons {
+.headingButtons {
 	display: flex;
 	gap: 10px;
 }

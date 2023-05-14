@@ -165,8 +165,8 @@ namespace PokedexBeta.src.models
 				for (int i = 0; i < count; i++) {
 					rdr.Read();
 
-					List<PokemonAbility> abilities = getAbilitiesForPokemon(rdr.GetInt32(0), conn);
-					List<PokemonMove> moves = getMovesForPokemon(rdr.GetInt32(0), conn);
+					//List<PokemonAbility> abilities = getAbilitiesForPokemon(rdr.GetInt32(0), conn);
+					//List<PokemonMove> moves = getMovesForPokemon(rdr.GetInt32(0), conn);
 
 					allPokemon[i] = new Pokemon(rdr.GetInt32(0), rdr.GetString(1), (float)rdr.GetDouble(2),
 						(float)rdr.GetDouble(3), allTypes[rdr.GetInt32(4) - 1], rdr.IsDBNull(5) ? null : allTypes[rdr.GetInt32(5) - 1]/*allTypes[allTypes.Length - 1] : allTypes[rdr.GetInt32(5) - 1]*/,
@@ -174,7 +174,7 @@ namespace PokedexBeta.src.models
 						rdr.GetInt32(10), rdr.GetInt32(11), rdr.GetInt32(12), rdr.IsDBNull(13) ? null : rdr.GetString(13),
 						allGrowthRates[rdr.GetInt32(14) - 1], rdr.GetInt32(15), rdr.IsDBNull(16) ? -1 : rdr.GetInt32(16),
 						rdr.IsDBNull(17) ? -1 : rdr.GetInt32(17), rdr.IsDBNull(18) ? -1 : rdr.GetInt32(18), rdr.GetString(19), rdr.GetBoolean(21),
-						rdr.GetString(22), abilities, moves
+						rdr.GetString(22), null, null
 					);
 				}
 			}
@@ -350,10 +350,10 @@ namespace PokedexBeta.src.models
 		{
 			Load_Growth_Rate();
 			Load_Types();
-			Load_Moves();
-			Load_Abilities();
+			//Load_Moves();
+			//Load_Abilities();
 			Load_Pokemon();
-			Add_Evolution_Chain();
+			//Add_Evolution_Chain();
 		}
 		
 		static public Pokemon getPokemonByID(int id)
