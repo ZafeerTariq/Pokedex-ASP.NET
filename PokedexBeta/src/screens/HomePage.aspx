@@ -30,6 +30,13 @@
 			<hr />
 			<p style = "display: inline; font-size: 25px;">Type:</p>
 			<asp:DropDownList onchange="this.form.submit()" ID = "typeList" class = "typesList" runat = "server"></asp:DropDownList>
+			
+			<div class = "search">
+				<p style = "font-size: 25px;">Search:</p>
+				<input class = "search-bar" type = "text" id = "searchInput" runat = "server" placeholder = "Search..." />
+				<button class = "search-button" type = "submit" id = "searchButton" runat = "server">Search</button>
+			</div>
+			
 			<header>
 				<p>ID</p>
 				<p>Name</p>
@@ -44,55 +51,59 @@
 			</header>
 		</form>
 		<%
-			string type = typeList.SelectedValue;
-			if (type == "All") { 
-				for (int i = 0; i < Pokedex.allPokemon.Count(); i++) {
-					if (Pokedex.allPokemon[i].pokedexID < 10000) {
-						HttpContext.Current.Items["localPokemon"] = Pokedex.allPokemon[i];
-						Server.Execute("~/src/components/PokemonCard.aspx");
-					}
-					else
-						break;
-				}
-			}
-			else {
-				for (int i = 0; i < Pokedex.allPokemon.Count(); i++) {
-					if (Pokedex.allPokemon[i].pokedexID < 10000) {
-						bool insert = false;
-						foreach (PokemonType localType in Pokedex.allPokemon[i].types) {
-							if (localType.name == type) { 
-								insert = true;
-								break;
+            string name = searchInput.Value;
+            string type = typeList.SelectedValue;
+            if (type == "All") {
+                for (int i = 0; i < Pokedex.allPokemon.Count(); i++) {
+                    if (Pokedex.allPokemon[i].pokedexID < 10000) {
+                        if (name != null && Pokedex.allPokemon[i].name.Contains(name.ToLower())) {
+                            HttpContext.Current.Items["localPokemon"] = Pokedex.allPokemon[i];
+                            Server.Execute("~/src/components/PokemonCard.aspx");
+                        }
+						else if (name == null) {
+							HttpContext.Current.Items["localPokemon"] = Pokedex.allPokemon[i];
+                            Server.Execute("~/src/components/PokemonCard.aspx");
+                        }
+                    }
+                    else
+                        break;
+                }
+            }
+            else {
+                for (int i = 0; i < Pokedex.allPokemon.Count(); i++) {
+                    if (Pokedex.allPokemon[i].pokedexID < 10000) {
+                        bool insert = false;
+                        foreach (PokemonType localType in Pokedex.allPokemon[i].types) {
+                            if (localType.name == type) {
+                                insert = true;
+                                break;
+                            }
+                            else
+                                insert = false;
+                        }
+                        if (insert) {
+                            if (name != null && Pokedex.allPokemon[i].name.Contains(name)) {
+                            HttpContext.Current.Items["localPokemon"] = Pokedex.allPokemon[i];
+                            Server.Execute("~/src/components/PokemonCard.aspx");
 							}
-							else 
-								insert = false;
-						}
-						if (insert) { 
-							HttpContext.Current.Items["localPokemon"] =  Pokedex.allPokemon[i];
-							Server.Execute("~/src/components/PokemonCard.aspx");
-						}
-					}
-					else
-						break;
-				}
-			}
+							else if (name == null) {
+								HttpContext.Current.Items["localPokemon"] = Pokedex.allPokemon[i];
+								Server.Execute("~/src/components/PokemonCard.aspx");
+							}
+                        }
+                    }
+                    else
+                        break;
+                }
+            }
 		%>
 	</div>
 
 	<script>
 		stickyElem = document.querySelector("header");
-     
-		/* Gets the amount of height
-		of the element from the
-		viewport and adds the
-		pageYOffset to get the height
-		relative to the page */
+	 
 		currStickyPos = stickyElem.getBoundingClientRect().top + window.pageYOffset;
 		window.onscroll = function() {
-         
-			/* Check if the current Y offset
-			is greater than the position of
-			the element */
 			if(window.pageYOffset > currStickyPos) {
 				stickyElem.style.position = "fixed";
 				stickyElem.style.top = "0";
@@ -101,7 +112,7 @@
 				stickyElem.style.top = "initial";
 			}
 		}
-    </script>
+	</script>
 
 </body>
 </html>
