@@ -139,7 +139,7 @@
 							<% foreach (PokemonMove move in localPokemon.moves) { %>
 								<% if (move.learnMethod == "level-up") { %>
 									<p><%= move.learnAtLevel %></p>
-									<p><%= Helper.firstCharToUpper(move.move.name) %></p>
+									<a class = "move-text" href = "<%= ResolveUrl("../screens/MoveInfoPage.aspx") + "?name=" + move.move.name %>"><%= Helper.firstCharToUpper(move.move.name) %></a>
 									<a class = "<%= "type-button-moves type-" + move.move.type.name %>" href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + move.move.type.name%>">
 										<%= Helper.firstCharToUpper(move.move.type.name) %>
 									</a>
@@ -155,7 +155,7 @@
 							<h4>Type</h4>
 							<% foreach (PokemonMove move in localPokemon.moves) { %>
 								<% if (move.learnMethod == "machine") { %>
-									<p><%= Helper.firstCharToUpper(move.move.name) %></p>
+									<a class = "move-text" href = "<%= ResolveUrl("../screens/MoveInfoPage.aspx") + "?name=" + move.move.name %>"><%= Helper.firstCharToUpper(move.move.name) %></a>
 									<a class = "<%= "type-button-moves type-" + move.move.type.name %>" href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + move.move.type.name%>">
 										<%= Helper.firstCharToUpper(move.move.type.name) %>
 									</a>
@@ -171,7 +171,23 @@
 							<h4>Type</h4>
 							<% foreach (PokemonMove move in localPokemon.moves) { %>
 								<% if (move.learnMethod == "egg") { %>
-									<p><%= Helper.firstCharToUpper(move.move.name) %></p>
+									<a class = "move-text" href = "<%= ResolveUrl("../screens/MoveInfoPage.aspx") + "?name=" + move.move.name %>"><%= Helper.firstCharToUpper(move.move.name) %></a>
+									<a class = "<%= "type-button-moves type-" + move.move.type.name %>" href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + move.move.type.name%>">
+										<%= Helper.firstCharToUpper(move.move.type.name) %>
+									</a>
+								<% } %>
+							<% } %>
+						</div>
+					</div>
+					<hr />
+					<div>
+						<h3>Move Tutor</h3>
+						<div class = "machine-move-info">
+							<h4>Name</h4>
+							<h4>Type</h4>
+							<% foreach (PokemonMove move in localPokemon.moves) { %>
+								<% if (move.learnMethod == "tutor") { %>
+									<a class = "move-text" href = "<%= ResolveUrl("../screens/MoveInfoPage.aspx") + "?name=" + move.move.name %>"><%= Helper.firstCharToUpper(move.move.name) %></a>
 									<a class = "<%= "type-button-moves type-" + move.move.type.name %>" href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + move.move.type.name%>">
 										<%= Helper.firstCharToUpper(move.move.type.name) %>
 									</a>

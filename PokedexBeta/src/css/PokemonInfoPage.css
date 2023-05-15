@@ -118,19 +118,26 @@ progress {
 
 .moves-table {
 	display: grid;
-	grid-template-columns: 30% 5% 30% 5% 30%;
+	grid-template-columns: 22% 6% 20% 6% 20% 6% 20%;
+}
+
+.move-text {
+	text-decoration: none;
+	color: black;
+	padding-top: 12px;
+	
 }
 
 .level-up-move-info {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: 22% 39% 39%;
 	padding-left: 18%;
 }
 
 .machine-move-info {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	padding-left: 25%;
+	padding-left: 5%;
 }
 
 .type-button-moves {

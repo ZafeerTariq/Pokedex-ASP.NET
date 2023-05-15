@@ -1,4 +1,4 @@
-﻿using System;
+﻿//using System;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 
@@ -375,12 +375,12 @@ namespace PokedexBeta.src.models
 		
 		static public Pokemon getPokemonByID(int id)
 		{
-			if (allPokemon[id - 1].pokedexID == id)
+			if (id < 10000 && allPokemon[id - 1].pokedexID == id)
 				return allPokemon[id - 1];
 			else {
-				foreach (Pokemon pokemon in allPokemon) {
-					if (pokemon.pokedexID == id)
-						return pokemon;
+				for (int i = 1010; i < allPokemon.Length; i++) {
+					if (allPokemon[i].id == id)
+						return allPokemon[i];
 				}
 			}
 			return null;
