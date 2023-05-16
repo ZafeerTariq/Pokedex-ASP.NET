@@ -21,7 +21,6 @@
 			<div class = "<%= "type-" + localType.name%>">
 				<h1>
 					<%= Helper.firstCharToUpper(localType.name) %>
-					<span class = "text-muted">(type)</span>
 				</h1>
 			</div>
 			<hr />

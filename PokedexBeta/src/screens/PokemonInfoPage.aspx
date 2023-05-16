@@ -23,7 +23,7 @@
 			<div class= "heading">
 				<h1><%= Helper.firstCharToUpper(localPokemon.name) %></h1>
 				<% if (!isFav) { %>
-					<asp:Button ID = "favouriteButton" class = "favourite-button" Text = "Add To Favourites" OnClick = "favouriteButtonPressed" runat = "server"/>
+					<asp:Button ID = "favouriteButton" class = "favourite-button" Text = "Favourite" OnClick = "favouriteButtonPressed" runat = "server"/>
 				<% } else { %>
 					<asp:Button ID = "dislikeButton" class = "favourite-button" Text = "Remove From Favourites" OnClick = "dislikeButtonPressed" runat = "server"/>
 				<% } %>

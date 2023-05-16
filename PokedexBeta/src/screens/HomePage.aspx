@@ -22,7 +22,7 @@
 				<% } %>
 			</div>
 			<div class = "heading">
-				<h1>Complete Pokedex</h1>
+				<h1>Pokedex</h1>
 				<% if (Pokedex.loggedIn) { %>
 					<p class = "welcomeText">Welcome <%= PokedexUser.username %></p>
 					<asp:Button CssClass = "loginButton" runat = "server" Text = "Log Out" OnClick = "Logout_Click" />
@@ -35,7 +35,7 @@
 				<% } %>
 			</div>
 			<hr />
-			<p style = "display: inline; font-size: 25px;">Type:</p>
+			<p style = "display: inline; font-size: 25px; padding-right: 15px;">Type:</p>
 			<asp:DropDownList onchange="this.form.submit()" ID = "typeList" class = "typesList" runat = "server"></asp:DropDownList>
 			
 			<div class = "search">
@@ -67,8 +67,8 @@
                             HttpContext.Current.Items["localPokemon"] = Pokedex.allPokemon[i];
                             Server.Execute("~/src/components/PokemonCard.aspx");
                         }
-						else if (name == null) {
-							HttpContext.Current.Items["localPokemon"] = Pokedex.allPokemon[i];
+                        else if (name == null) {
+                            HttpContext.Current.Items["localPokemon"] = Pokedex.allPokemon[i];
                             Server.Execute("~/src/components/PokemonCard.aspx");
                         }
                     }
@@ -77,30 +77,26 @@
                 }
             }
             else {
-                for (int i = 0; i < Pokedex.allPokemon.Count(); i++) {
-                    if (Pokedex.allPokemon[i].pokedexID < 10000) {
-                        bool insert = false;
-                        foreach (PokemonType localType in Pokedex.allPokemon[i].types) {
-                            if (localType.name == type) {
-                                insert = true;
-                                break;
-                            }
-                            else
-                                insert = false;
+                for (int i = 0; i < 1010; i++) {
+                    bool insert = false;
+                    foreach (PokemonType localType in Pokedex.allPokemon[i].types) {
+                        if (localType.name == type) {
+                            insert = true;
+                            break;
                         }
-                        if (insert) {
-                            if (name != null && Pokedex.allPokemon[i].name.Contains(name)) {
+                        else
+                            insert = false;
+                    }
+                    if (insert) {
+                        if (name != null && Pokedex.allPokemon[i].name.Contains(name)) {
                             HttpContext.Current.Items["localPokemon"] = Pokedex.allPokemon[i];
                             Server.Execute("~/src/components/PokemonCard.aspx");
-							}
-							else if (name == null) {
-								HttpContext.Current.Items["localPokemon"] = Pokedex.allPokemon[i];
-								Server.Execute("~/src/components/PokemonCard.aspx");
-							}
+                        }
+                        else if (name == null) {
+                            HttpContext.Current.Items["localPokemon"] = Pokedex.allPokemon[i];
+                            Server.Execute("~/src/components/PokemonCard.aspx");
                         }
                     }
-                    else
-                        break;
                 }
             }
 		%>

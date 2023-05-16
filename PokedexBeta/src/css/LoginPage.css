@@ -1,0 +1,118 @@
+﻿html {
+    font-family: "Fira Sans","Trebuchet MS",Ubuntu,Helvetica,Arial,sans-serif;
+}
+
+﻿body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    background-position: center;
+}
+
+#form1 {
+    left: 42%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 208px;
+    width: 339px;
+}
+
+.button1 {
+    position: absolute;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 24px;
+    left: 50px;
+    top: 150px;
+    height: 50px;
+    transition: background-color 1s ease;
+    width: 200px;
+}
+
+.button1:hover {
+    background-color: red;
+    color: white;
+}
+
+.button2 {
+    position: absolute;
+    border-radius: 20px;
+    background-color: white;
+    outline: 50px;
+    left: 300px;
+    top: 150px;
+    height: 50px;
+    transition: background-color 1s ease;
+    width: 200px;
+}
+
+.button2:hover {
+    background-color: red;
+    color: white;
+}
+
+.usernamefield {
+    position: absolute;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    font-size: 35px;
+    left: 180px;
+}
+
+.usernamefield:focus {
+    outline: none;
+    border-bottom-color: white;
+}
+
+.usernamefield::before {
+    content: attr(label1);
+    position: absolute;
+    top: -25px;
+    left: 0;
+    font-size: large;
+    font-weight: bold;
+}
+
+.password {
+    position: absolute;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    font-size: x-large;
+    top: 60px;
+    left: 180px;
+}
+
+.password:focus {
+    outline: none;
+    border-bottom-color: white; /* Change the color of the line when in focus */
+}
+
+.userlbl {
+    position: absolute;
+    top: 0px;
+    left: -40px;
+    color: azure;
+    outline: 20px;
+    outline-color: black;
+    font-size: 35px;
+}
+
+.pwdlbl {
+    position: absolute;
+    top: 60px;
+    left: -40px;
+    color: azure;
+    outline: 20px;
+    outline-color: black;
+    font-size: 35px;
+}
+
+.auth {
+    position: absolute;
+    top: 700px;
+    color: darkred;
+    left: 800px;
+}
