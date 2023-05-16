@@ -10,16 +10,31 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <h1> <%= Helper.firstCharToUpper(localAbility.name) %> </h1>
+        <h1><%= Helper.firstCharToUpper(localAbility.name) %></h1>
         <hr />
-        <br  />
-        <h2> Description : </h2>
-        <div class = "descriptionContainer">
-            <h2> <%= localAbility.description %></h2>
-            <br  />
-        </div>
-        <hr />
-        <br />
+        <h2>Description :</h2>
+        <p class = "description"><%= localAbility.description %></p>
+		<br />
+        <h2 style= "text-align: center;">Pokemon With <%= Helper.firstCharToUpper(localAbility.name) %></h2>
+        <div class = "pokemon-list">
+				<% foreach (Pokemon poke in pokemon) { %>
+					<div class = "pokemon-card">
+						<img src = "<%= poke.imageURL %>"/>
+						<div>
+							<a class = "pokemon-card-text" href = "<%= ResolveUrl("../screens/PokemonInfoPage.aspx") + "?id=" + poke.id %>">
+								<%= Helper.firstCharToUpper(poke.name) %>
+							</a>
+							<div class = "types">
+								<% foreach (PokemonType type in poke.types) { %>
+									<a class = "pokemon-card-text" href = "<%= ResolveUrl("../screens/TypeInfoPage.aspx") + "?name=" + type.name %>">
+										<%= Helper.firstCharToUpper(type.name) %>
+									</a>
+								<% } %>
+							</div>
+						</div>
+					</div>
+				<% } %>
+			</div>
     </form>
 </body>
 </html>

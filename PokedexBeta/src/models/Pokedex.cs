@@ -1,5 +1,4 @@
-﻿//using System;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Collections.Generic;
 
 namespace PokedexBeta.src.models

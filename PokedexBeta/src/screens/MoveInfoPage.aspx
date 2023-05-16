@@ -34,7 +34,11 @@
 							<% } else { %>
 								<p><%= localMove.power %></p>
 							<% } %>
-							<p><%= localMove.accuracy %></p>
+							<% if (localMove.power == null) { %>
+								<p>None</p>
+							<% } else { %>
+								<p><%= localMove.accuracy %></p>
+							<% } %>
 							<p><%= localMove.pp %></p>
 							<p><%= localMove.priority %></p>
 							<% if (localMove.effectChance == null) { %>
