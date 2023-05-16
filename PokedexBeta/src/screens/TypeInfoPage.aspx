@@ -11,7 +11,14 @@
 <body>
 	<form id="form1" runat="server">
 		<div>
-			<div class = "<%= "header type-" + localType.name%>">
+			<header>
+				<a class = "header-buttons" href = "HomePage.aspx">Return Home</a>
+				<a class = "header-buttons" href = "FavouritesPage.aspx">Favourites List</a>
+				<% if (Pokedex.loggedIn) { %>
+					<asp:Button CssClass = "header-buttons" runat = "server" Text = "Log Out" OnClick = "Logout_Click" />
+				<% } %>
+			</header>
+			<div class = "<%= "type-" + localType.name%>">
 				<h1>
 					<%= Helper.firstCharToUpper(localType.name) %>
 					<span class = "text-muted">(type)</span>

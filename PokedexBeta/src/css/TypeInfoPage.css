@@ -2,8 +2,22 @@
 	font-family: "Fira Sans","Trebuchet MS",Ubuntu,Helvetica,Arial,sans-serif;
 }
 
-.header {
+header {
+	top: 0;
+	background-color: black;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
+.header-buttons {
+	text-decoration: none;
+	color: white;
+	background-color: transparent;
+	border: none;
+	padding-right: 20px;
+	padding-left: 20px;
 }
 
 .type-normal {

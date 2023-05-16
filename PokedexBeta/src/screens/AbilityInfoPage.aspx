@@ -10,7 +10,15 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <h1><%= Helper.firstCharToUpper(localAbility.name) %></h1>
+		<header>
+				<a class = "header-buttons" href = "HomePage.aspx">Return Home</a>
+				<a class = "header-buttons" href = "FavouritesPage.aspx">Favourites List</a>
+				<% if (Pokedex.loggedIn) { %>
+					<asp:Button CssClass = "header-buttons" runat = "server" Text = "Log Out" OnClick = "Logout_Click" />
+				<% } %>
+		</header>
+        
+		<h1><%= Helper.firstCharToUpper(localAbility.name) %></h1>
         <hr />
         <h2>Description :</h2>
         <p class = "description"><%= localAbility.description %></p>

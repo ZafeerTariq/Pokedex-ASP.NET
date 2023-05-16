@@ -18,7 +18,7 @@ namespace PokedexBeta.src.screens
 			);
 			{
 				conn.Open();
-				SqlCommand cmd = new SqlCommand("insert into user_data values(@fname,@lname,@Username,@Pwd,@Address,@Phone,@gender,@mail)", conn);
+				SqlCommand cmd = new SqlCommand("insert into [user] values(@fname,@lname,@Username,@Pwd,@Address,@Phone,@gender,@mail)", conn);
 				
 				cmd.Parameters.AddWithValue("fname", TextBox1.Text);
 				cmd.Parameters.AddWithValue("lname", TextBox5.Text);

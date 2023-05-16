@@ -118,12 +118,14 @@
   <ItemGroup>
     <Content Include="src\components\PokemonCard.aspx" />
     <Content Include="src\css\AbilityInfoPage.css" />
+    <Content Include="src\css\FavouritesPage.css" />
     <Content Include="src\css\HomePage.css" />
     <Content Include="src\css\MoveInfoPage.css" />
     <Content Include="src\css\PokemonInfoPage.css" />
     <Content Include="src\css\pokemon-card.css" />
     <Content Include="src\css\TypeInfoPage.css" />
     <Content Include="src\screens\AbilityInfoPage.aspx" />
+    <Content Include="src\screens\FavouritesPage.aspx" />
     <Content Include="src\screens\MoveInfoPage.aspx" />
     <Content Include="src\screens\PokemonInfoPage.aspx" />
     <Content Include="src\screens\LoginPage.aspx" />
@@ -157,6 +159,13 @@
     </Compile>
     <Compile Include="src\screens\AbilityInfoPage.aspx.designer.cs">
       <DependentUpon>AbilityInfoPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="src\screens\FavouritesPage.aspx.cs">
+      <DependentUpon>FavouritesPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="src\screens\FavouritesPage.aspx.designer.cs">
+      <DependentUpon>FavouritesPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="src\screens\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>

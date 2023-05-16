@@ -21,7 +21,7 @@ namespace PokedexBeta.src.screens
 
 				conn.Open();
 				
-				string qry = "select * from user_data where username='" + uid + "' and pwd='" + pass + "'";
+				string qry = "select * from [user] where username='" + uid + "' and pwd='" + pass + "'";
 				
 				SqlCommand cmd = new SqlCommand(qry, conn);
 				SqlDataReader rdr = cmd.ExecuteReader();
@@ -31,14 +31,18 @@ namespace PokedexBeta.src.screens
 					PokedexUser.name = rdr.GetString(1) + " " + rdr.GetString(2);
 					PokedexUser.username = rdr.GetString(3);
 					PokedexUser.gender = rdr.GetString(6);
+
+					rdr.Close();
+					cmd.Dispose();
+
 					Response.Redirect("HomePage.aspx");
 				}
 				else {
 					Label4.Text = "UserId & Password Is not correct Try again..!!";
+					rdr.Close();
+					cmd.Dispose();
 				}
 
-				rdr.Close();
-				cmd.Dispose();
 				conn.Close();
 			}
 			catch (Exception ex) {

@@ -53,5 +53,9 @@ namespace PokedexBeta.src.screens
 
 			conn.Close();
 		}
+		protected void Logout_Click(object sender, EventArgs e)
+		{
+			Pokedex.loggedIn = false;
+		}
 	}
 }

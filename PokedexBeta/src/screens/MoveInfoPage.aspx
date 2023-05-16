@@ -11,6 +11,13 @@
 <body>
 	<form id="form1" runat="server">
 		<div>
+			<header>
+				<a class = "header-buttons" href = "HomePage.aspx">Return Home</a>
+				<a class = "header-buttons" href = "FavouritesPage.aspx">Favourites List</a>
+				<% if (Pokedex.loggedIn) { %>
+					<asp:Button CssClass = "header-buttons" runat = "server" Text = "Log Out" OnClick = "Logout_Click" />
+				<% } %>
+			</header>
 			<h1><%= Helper.firstCharToUpper(localMove.name) %></h1>
 			<hr />
 			<div class = "info">

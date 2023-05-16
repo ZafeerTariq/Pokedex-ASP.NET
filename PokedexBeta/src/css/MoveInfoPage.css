@@ -6,6 +6,24 @@ h1 {
 	text-align: center;
 }
 
+header {
+	top: 0;
+	background-color: black;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header-buttons {
+	text-decoration: none;
+	color: white;
+	background-color: transparent;
+	border: none;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
 .info {
 	display: grid;
 	grid-template-columns: 30% 5% 65%;

@@ -202,6 +202,9 @@ namespace PokedexBeta.src.screens
 
 			return temp;
 		}
-
+		protected void Logout_Click(object sender, EventArgs e)
+		{
+			Pokedex.loggedIn = false;
+		}
 	}
 }

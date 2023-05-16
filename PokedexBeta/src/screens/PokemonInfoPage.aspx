@@ -6,12 +6,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 	<link rel="stylesheet" type="text/css" href="~/src/css/PokemonInfoPage.css"/>
+
 	<title></title>
 </head>
 <body>
 	<form id="form1" runat="server">
 		<div>
-			<h1><%= Helper.firstCharToUpper(localPokemon.name) %></h1>
+			<header>
+				<a class = "header-buttons" href = "HomePage.aspx">Return Home</a>
+				<a class = "header-buttons" href = "FavouritesPage.aspx">Favourites List</a>
+				<% if (Pokedex.loggedIn) { %>
+					<asp:Button CssClass = "header-buttons" runat = "server" Text = "Log Out" OnClick = "Logout_Click" />
+				<% } %>
+			</header>
+			
+			<div class= "heading">
+				<h1><%= Helper.firstCharToUpper(localPokemon.name) %></h1>
+				<% if (!isFav) { %>
+					<asp:Button ID = "favouriteButton" class = "favourite-button" Text = "Add To Favourites" OnClick = "favouriteButtonPressed" runat = "server"/>
+				<% } else { %>
+					<asp:Button ID = "dislikeButton" class = "favourite-button" Text = "Remove From Favourites" OnClick = "dislikeButtonPressed" runat = "server"/>
+				<% } %>
+			</div>
+
 			<hr />
 			<div class = "container">
 				<img src = "<%= localPokemon.imageURL %>" alt="UNABLE TO LOAD PIC" />

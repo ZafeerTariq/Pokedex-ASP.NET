@@ -14,6 +14,13 @@
 <body>
 	<div>
 		<form id = "form1" runat = "server">
+			<div class = "top-bar">
+				<a class = "top-bar-buttons" href = "HomePage.aspx">Return Home</a>
+				<a class = "top-bar-buttons" href = "FavouritesPage.aspx">Favourites List</a>
+				<% if (Pokedex.loggedIn) { %>
+					<asp:Button CssClass = "top-bar-buttons" runat = "server" Text = "Log Out" OnClick = "Logout_Click" />
+				<% } %>
+			</div>
 			<div class = "heading">
 				<h1>Complete Pokedex</h1>
 				<% if (Pokedex.loggedIn) { %>
