@@ -1,0 +1,306 @@
+﻿html {
+	font-family: "Fira Sans","Trebuchet MS",Ubuntu,Helvetica,Arial,sans-serif;
+}
+
+﻿body {
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+}
+
+#form1 {
+	left: 42%;
+	top: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	height: 208px;
+	width: 300px;
+}
+
+.firstname {
+	position: absolute;
+	border: none;
+	border-bottom: 2px solid black;
+	background-color: transparent;
+	font-size: 35px;
+	transition: background-color 1s ease;
+	left: -80px;
+	/* width: 200px;*/ /* Adjust the width value as needed */
+}
+
+.firstname:focus {
+	outline: none;
+	border-bottom-color: white;
+	transition: background-color 1s ease;
+}
+
+.firstname:focus::placeholder {
+	opacity: 0;
+	transition: background-color 1s ease;
+}
+
+.lastname {
+	position: absolute;
+	border: none;
+	border-bottom: 2px solid black;
+	background-color: transparent;
+	font-size: 35px;
+	transition: background-color 1s ease;
+	left: 380px;
+}
+
+.lastname:focus {
+	outline: none;
+	border-bottom-color: white;
+	transition: background-color 1s ease;
+}
+
+.lastname:focus::placeholder {
+	opacity: 0;
+	transition: background-color 1s ease;
+}
+
+.username {
+	position: absolute;
+	border: none;
+	border-bottom: 2px solid black;
+	background-color: transparent;
+	font-size: 35px;
+	transition: background-color 1s ease;
+	left: -80px;
+	top: 80px;
+}
+
+	.username:focus {
+		outline: none;
+		border-bottom-color: white;
+		transition: background-color 1s ease;
+	}
+
+		.username:focus::placeholder {
+			position: absolute;
+			left: 400px;
+			transition: background-color 1s ease;
+		}
+
+
+.password {
+	position: absolute;
+	border: none;
+	border-bottom: 2px solid black;
+	background-color: transparent;
+	font-size: 35px;
+	transition: background-color 1s ease;
+	left: 380px;
+	top: 80px;
+}
+
+	.password:focus {
+		outline: none;
+		border-bottom-color: white;
+		transition: background-color 1s ease;
+	}
+
+		.password:focus::placeholder {
+			opacity: 0;
+			transition: background-color 1s ease;
+		}
+
+.confirmpassword {
+	position: absolute;
+	border: none;
+	border-bottom: 2px solid black;
+	background-color: transparent;
+	font-size: 35px;
+	transition: background-color 1s ease;
+	left: -80px;
+	top: 160px;
+	width: 820px;
+}
+
+	.confirmpassword:focus {
+		outline: none;
+		border-bottom-color: white;
+		transition: background-color 1s ease;
+	}
+
+		.confirmpassword:focus::placeholder {
+			opacity: 0;
+			transition: background-color 1s ease;
+		}
+
+.address {
+	position: absolute;
+	border: none;
+	border-bottom: 2px solid black;
+	background-color: transparent;
+	font-size: 35px;
+	transition: background-color 1s ease;
+	left: -80px;
+	top: 240px;
+	width: 820px;
+}
+
+	.address:focus {
+		outline: none;
+		border-bottom-color: white;
+		transition: background-color 1s ease;
+	}
+
+		.address:focus::placeholder {
+			opacity: 0;
+			transition: background-color 1s ease;
+		}
+
+.phone {
+	position: absolute;
+	border: none;
+	border-bottom: 2px solid black;
+	background-color: transparent;
+	font-size: 35px;
+	transition: background-color 1s ease;
+	left: -80px;
+	top: 320px;
+}
+
+.phone:focus {
+	outline: none;
+	border-bottom-color: white;
+	transition: background-color 1s ease;
+}
+
+.phone:focus::placeholder {
+	opacity: 0;
+	transition: background-color 1s ease;
+}
+
+.gender {
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	position: absolute;
+	left: 500px;
+	top: 320px;
+}
+
+.gender label {
+	display: inline-block;
+	padding: 5px 10px;
+	margin-right: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.gender label:hover {
+	background-color: #f2f2f2;
+}
+
+.gender input[type="radio"] {
+	display: none;
+}
+
+.gender input[type="radio"]:checked + label {
+	background-color: #e1e1e1;
+}
+
+.genderlbl {
+	position: absolute;
+	left: 380px;
+	top: 320px;
+	background-color: transparent;
+	font-size: 35px;
+	transition: background-color 1s ease;
+	color: #767676;
+	margin-bottom: 2px;
+}
+
+.mail {
+	position: absolute;
+	border: none;
+	border-bottom: 2px solid black;
+	background-color: transparent;
+	font-size: 35px;
+	transition: background-color 1s ease;
+	left: -80px;
+	top: 400px;
+	width: 820px;
+}
+
+.mail:focus {
+	outline: none;
+	border-bottom-color: white;
+	transition: background-color 1s ease;
+}
+
+.mail:focus::placeholder {
+	opacity: 0;
+	transition: background-color 1s ease;
+}
+
+.button {
+	position: absolute;
+	border-radius: 20px;
+	background-color: white;
+	font-size: 24px;
+	left: 200px;
+	top: 550px;
+	height: 50px;
+	transition: background-color 1s ease;
+	width: 200px;
+}
+
+.button:hover {
+	background-color: red;
+	color: white;
+}
+
+.auth {
+	position: absolute;
+	top: 480px;
+	color: darkred;
+	left: 0px;
+	width: 820px;
+	font-size: 24px;
+}
+/*.firstname {
+	position: absolute;
+	top: 0px;
+	left: -40px;
+	color: azure;
+	outline: 20px;
+	outline-color: black;
+	font-size: 35px;
+}
+.firstname::-webkit-input-placeholder {*/
+/* Webkit-based browsers */
+/*opacity: 1;
+	transition: opacity 0.2s;
+}
+
+.firstname::-moz-placeholder {*/
+/* Mozilla Firefox 19+ */
+/*opacity: 1;
+	transition: opacity 0.2s;
+}
+
+.firstname:-ms-input-placeholder {*/
+/* Internet Explorer 10-11 */
+/*opacity: 1;
+	transition: opacity 0.2s;
+}
+
+.firstname::placeholder {*/
+/* Standardized syntax */
+/*opacity: 1;
+	transition: opacity 0.2s;
+}
+
+.firstname:focus::-webkit-input-placeholder,
+.firstname:focus::-moz-placeholder,
+.firstname:focus:-ms-input-placeholder,
+.firstname:focus::placeholder {
+	opacity: 0;
+}*/
