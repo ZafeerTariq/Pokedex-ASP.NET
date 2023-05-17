@@ -1,5 +1,5 @@
 # Pokedex-ASP.NET
-Pokedex made for a university project. All the data is saved in MSSQL databases and the tables have been filled using [pokeapi](https://pokeapi.co)
+Pokedex made for a university project. All the data is saved in MSSQL server and the tables have been filled using [pokeapi](https://pokeapi.co)
 ## Currently Has:
 1) Home Page displays all pokemon with ability to sort via type or name
 2) When clicked on a pokemon from home page, information about it is displayed in another page
